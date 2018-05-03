@@ -1,9 +1,24 @@
-
+# =====================================================================
+# xor.py - 3D Bitwise XOR function visualization.
+# Copyright (C) 2018  Zach Carmichael
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+# =====================================================================
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib.ticker import FormatStrFormatter
 import numpy as np
-import argparse
 
 DEFAULT_N = 32
 
@@ -52,6 +67,9 @@ def visualize_xor(n_neg, n_pos):
 
 
 if __name__ == '__main__':
+    import argparse
+
+
     def main(args):
         # Bounds
         n_neg = -args.n
@@ -64,5 +82,5 @@ if __name__ == '__main__':
     parser.add_argument('--n', type=int, help='Plot given bounds [-n, n-1] (default is '
                                               '[{}, {}]).'.format(-DEFAULT_N, DEFAULT_N - 1),
                         default=DEFAULT_N)
-    argv = parser.parse_args()
-    main(argv)
+    args = parser.parse_args()
+    main(args)
